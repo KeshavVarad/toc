@@ -1,0 +1,15 @@
+extends layout.pug
+
+block appContent
+    script setActive('news')
+    h1 News
+
+    - var count = 0
+    //- -console.log(data)
+    each post in data
+        if count<5
+            - console.log(post.description)
+            a.title_text(href=post.link) #{post.title}
+            p !{post.description}
+            p.small_text Date Published: #{post.pubdate}
+            - count++

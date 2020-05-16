@@ -1,0 +1,74 @@
+extends layout.pug
+
+block appContent
+    script setActive('home')
+
+    .break
+    
+    .stats_container
+        h1 US Data
+        table.stats
+            each country in us
+                tr
+                    th Positive
+                    td #{country.positive}
+                tr
+                    th Negative
+                    td #{country.negative}
+                tr
+                    th Reported Deaths
+                    td #{country.death}
+                tr
+                    th Recovered
+                    td #{country.recovered}
+        
+
+        h1 States Data
+        table.stats
+            tr
+                th State
+                th Positive
+                th Negative
+                th Reported Deaths
+                th Recovered
+            tbody
+                each state in states
+                    tr
+                        td #{state.state}
+                        
+                        if state.positive == null
+                            td NO DATA
+                        else
+                            td #{state.positive}
+                        
+                        if state.negative == null
+                            td NO DATA
+                        else
+                            td #{state.negative}
+
+                        if state.death == null
+                            td NO DATA
+                        else
+                            td #{state.death}
+                        
+                        if state.recovered == null
+                            td NO DATA
+                        else
+                            td #{state.recovered}
+
+                
+
+    .break
+
+    .about_container
+        .heading
+            h1.heading_text About
+        .content
+            p.content_text.
+                Times of Corona is a website made to inform people about the corona virus
+                and any updates about it. It provides news updates and a spread map that
+                tells people how much of an area has the corona virus. It is important to
+                stay safe during the corona virus by staying at home andwashing your hands
+                as much as possible. This is very important!
+            img(src="/images/coronavirus_safety.jpg" width="25%" height="25%")
+    
