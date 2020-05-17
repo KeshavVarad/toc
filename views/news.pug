@@ -2,14 +2,23 @@ extends layout.pug
 
 block appContent
     script setActive('news')
-    h1 News
+    .container-fluid
+        .row
+            .col-12.text-center
+                h2 News
 
-    - var count = 0
-    //- -console.log(data)
-    each post in data
-        if count<5
-            - console.log(post.description)
-            a.title_text(href=post.link) #{post.title}
-            p !{post.description}
-            p.small_text Date Published: #{post.pubdate}
-            - count++
+    .container
+        - var count = 0
+        //- -console.log(data)
+        each post in data
+            if count<5
+                .row
+                    .col-12.text-center
+                        a.title_text(href=post.link) #{post.title}
+                .row
+                    .col-12.text-center
+                        p !{post.description}
+                .row
+                    .col-12.text-center
+                        p.text-muted Date Published: #{post.pubdate}
+                - count++

@@ -1,11 +1,11 @@
 function setActive(id) {
-    var navArray = ['home', 'news', 'spread_map']
+    var navArray = ['#home', '#news', '#spread_map']
     navArray.forEach((nav) => {
         if (nav === id) {
-            document.getElementById(id).className = 'active'
+            document.getElementById(id).className = 'nav-link active'
         }  
         else {
-            document.getElementById(nav).className = 'inactive'
+            document.getElementById(nav).className = 'nav-link'
         }
     })
 }

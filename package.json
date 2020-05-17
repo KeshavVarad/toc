@@ -1,5 +1,5 @@
 {
-  "name": "covid-19_pro",
+  "name": "times_of_corona",
   "version": "1.0.0",
   "description": "A web application to keep people updated on Covid-19 and give them a place to register themselves as being infected.",
   "main": "app.js",
@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
+    "bootstrap": "^4.5.0",
     "express": "^4.17.1",
     "pug": "^2.0.4"
   }
