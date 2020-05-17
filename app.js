@@ -34,6 +34,10 @@ app.get('/spread_map', (request, response) => {
     response.render('spread_map');
 })
 
+app.get('/about', (request, response) => {
+    response.render('about');
+});
+
 app.listen(8080, () => {
     console.log("Listening on 8080")
 });

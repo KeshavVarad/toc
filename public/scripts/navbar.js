@@ -1,5 +1,5 @@
 function setActive(id) {
-    var navArray = ['#home', '#news', '#spread_map']
+    var navArray = ['home', 'news', 'spread_map', 'about']
     navArray.forEach((nav) => {
         if (nav === id) {
             document.getElementById(id).className = 'nav-link active'

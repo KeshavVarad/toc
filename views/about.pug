@@ -1,0 +1,22 @@
+extends layout.pug
+
+block appContent
+    script setActive('about')
+    .container
+        .top-buffer
+            .container
+                .row
+                    .col-12.text-center
+                        h2 About
+                .top-buffer
+                .row
+                    .col-12.text-center
+                        p.
+                            Times of Corona is a website made to inform people about the corona virus
+                            and any updates about it. It provides news updates and a spread map that
+                            tells people how much of an area has the corona virus. It is important to
+                            stay safe during the corona virus by staying at home andwashing your hands
+                            as much as possible. This is very important!
+                .text-center
+                    img.img-fluid(src="/images/coronavirus_safety.jpg" width="50%" height="auto")
+            .top-buffer

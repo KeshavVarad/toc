@@ -18,12 +18,12 @@ block appContent
             if count<5
                 .top-buffer
                 .row
-                    .col-12.text-center
+                    .col-12
                         a.title_text(href=post.link) #{post.title}
                 .row
-                    .col-12.text-center
+                    .col-12
                         p !{post.description}
                 .row
-                    .col-12.text-center
+                    .col-12
                         p.text-muted Date Published: #{post.pubdate}
                 - count++

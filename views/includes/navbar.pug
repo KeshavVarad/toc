@@ -1,16 +1,29 @@
-//- .topnav
-//-     a.navbar-text(id='home', href="/home") Home
-//-     a.navbar-text(id='news', href="/news") News
-//-     a.navbar-text(id='spread_map', href="/spread_map") Spread Map
 
 
-.container_fluid
-    .row.centered-form.center-block
-        .container.col-md-10.col-md-offset-1
-            ul.nav.nav-tabs
-                li.nav-item
-                    a.nav-link(id='#home' href='/home') Home
-                li.nav-item
-                    a.nav-link(id='#news' href='/news') News
-                li.nav-item
-                    a.nav-link(id='#spread_map' href='/spread_map') Spread Map
+//- .container_fluid
+//-     .row.centered-form.center-block
+//-         .container.col-md-10.col-md-offset-1
+//-             ul.navbar.navbar-expand-lg.navbar-dark.bg-primary
+//-                 li.nav-item
+//-                     a.nav-link(id='#home' href='/home') Home
+//-                 li.nav-item
+//-                     a.nav-link(id='#news' href='/news') News
+//-                 li.nav-item
+//-                     a.nav-link(id='#spread_map' href='/spread_map') Spread Map
+
+nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+    a.navbar-brand Times of Corona
+    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarColor01' aria-controls='navbarColor01' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+    #navbarColor01.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+            li.nav-item
+                a.nav-link#home(href='/home')
+                    | Home 
+                    span.sr-only (current)
+            li.nav-item
+                a.nav-link#news(href='/news') News
+            li.nav-item
+                a.nav-link#spread_map(href='/spread_map') Spread Map
+            li.nav-item
+                a.nav-link#about(href='/about') About
