@@ -30,8 +30,34 @@ app.get('/news', async (request, response) => {
 
 })
 
-app.get('/spread_map', (request, response) => {
-    response.render('spread_map');
+app.get('/graphs', async (request, response) => {
+    var usDailyJSON = await axios.get('https://covidtracking.com/api/us/daily');
+    var usDailyJSONData = usDailyJSON.data;
+    var dates = [];
+    var positives = [];
+    var numDays = usDailyJSONData.length;
+    for(var i=numDays-1; i>0; i--) {
+        dates.push(usDailyJSONData[i].date);
+        positives.push(usDailyJSONData[i].positive);
+    };
+
+
+    var chartData = {
+        type: 'line',
+        data: {
+            labels: dates,
+            datasets: [
+                {
+                    data: positives,
+                    label: "US Positive Test Results"
+                }
+            ]
+        }
+    }
+
+    response.render('graphs', {
+        data: JSON.stringify(chartData),
+    });
 })
 
 app.get('/about', (request, response) => {
