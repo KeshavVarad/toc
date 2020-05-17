@@ -2,16 +2,21 @@ extends layout.pug
 
 block appContent
     script setActive('news')
+
+    .top-buffer
+
     .container-fluid
         .row
             .col-12.text-center
                 h2 News
 
+    .top-buffer
     .container
         - var count = 0
         //- -console.log(data)
         each post in data
             if count<5
+                .top-buffer
                 .row
                     .col-12.text-center
                         a.title_text(href=post.link) #{post.title}

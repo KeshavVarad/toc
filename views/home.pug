@@ -3,12 +3,13 @@ extends layout.pug
 block appContent
     script setActive('home')
 
-    .break
+    .top-buffer
     
     .container
         .row
             .col-12.text-center 
                 h2 US Data
+        .top-buffer
         each country in us
             .row
                 .col.text-center.border 
@@ -27,10 +28,13 @@ block appContent
                     h5 Recovered
                 .col.text-center.border #{country.recovered}
 
+    .top-buffer
+
     .container
         .row
             .col-12.text-center
                 h2 States Data
+        .top-buffer
         .row
             .col.text-center.border 
                 h5 State
@@ -70,10 +74,12 @@ block appContent
 
     .break
 
+    .top-buffer
     .container
         .row
             .col-12.text-center
-                h1.heading_text About
+                h2 About
+        .top-buffer
         .row
             .col-12.text-center
                 p.
@@ -84,4 +90,5 @@ block appContent
                     as much as possible. This is very important!
         .text-center
             img.img-fluid(src="/images/coronavirus_safety.jpg" width="50%" height="auto")
+    .top-buffer
     
