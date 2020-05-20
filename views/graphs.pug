@@ -6,8 +6,9 @@ block appContent
     .container.text-center
         h2 Graphs
     .top-buffer
-    .container
-        canvas.mx-auto#usPositiveTests(width="1000" height="550")
+    .text-center
+        .container(style="position: relative; height:65vh; width:130vh")
+            canvas.mx-auto#usPositiveTests
     script.
         window.onload = function() {
             let ctx = document.getElementById("usPositiveTests");

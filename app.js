@@ -91,7 +91,7 @@ app.get('/graphs', async (request, response) => {
             ]
         },
         options: {
-            responsive: false
+            responsive: true
         }
     }
 
