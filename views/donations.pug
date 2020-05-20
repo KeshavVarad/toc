@@ -1,0 +1,47 @@
+extends layout.pug
+
+block appContent
+    script setActive('donations')
+    .top-buffer
+    .container.col-md-10.col-md-offset-1
+        .row
+            .col-12.text-center
+                h2 Feeding America. Help the Hungry!
+            .col.text-center
+                button(type="button" class="btn btn-primary" onclick="window.open('http://help.feedingamerica.org/goto/keshav')") DONATE
+        
+        .row
+            p
+            | Food banks all across the country are feeding people 
+            | in need within their communities now more than ever.
+            | Covid-19 has cut off the most vulnerable people in 
+            | commuinities from hunger relief and Feeding America
+            | is responding to the challenge very systematically.
+        
+        .top-buffer
+            
+        .row
+            h5 Actions Taken by Feeding America:
+            ul
+                li.
+                    They have launched the Covid-19 Response Fund, which
+                    supports people facing hunger and the food banks that
+                    support them. 
+                li.
+                    They are working with government
+                    leaders to ensure the emergency response includes strong
+                    support and flexibility for federal nutrition programs
+                    incluiding the School Lunch Program. 
+            p
+            | These are only a few
+            | of the things that Feeding America has done to help with
+            | the increased hunger that Covid-19 has caused. This link
+            | goes to a place to donate to Feeding America to make a
+            | difference. Every cent counts!
+
+
+        .top-buffer
+        .text-center
+            img.img-fluid(src="/images/feeding_america.jpg" width="100%" height="auto")
+        .top-buffer
+

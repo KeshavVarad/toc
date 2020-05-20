@@ -2,7 +2,12 @@ extends layout.pug
 
 block appContent
     script setActive('graphs')
-    canvas#usPositiveTests(width="1600" height="900")
+    .top-buffer
+    .container.text-center
+        h2 Graphs
+    .top-buffer
+    .container
+        canvas.mx-auto#usPositiveTests(width="1000" height="550")
     script.
         window.onload = function() {
             let ctx = document.getElementById("usPositiveTests");

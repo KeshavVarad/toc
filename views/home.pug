@@ -14,19 +14,23 @@ block appContent
             .row
                 .col.text-center.border 
                     h5 Positive
-                .col.text-center.border #{country.positive}
+                .col.text-center.border #{country.positive.toLocaleString()}
             .row
                 .col.text-center.border 
                     h5 Negative
-                .col.text-center.border #{country.negative}
+                .col.text-center.border #{country.negative.toLocaleString()}
             .row
                 .col.text-center.border 
                     h5 Reported Deaths
-                .col.text-center.border #{country.death}
+                .col.text-center.border #{country.death.toLocaleString()}
             .row
                 .col.text-center.border 
                     h5 Recovered
-                .col.text-center.border #{country.recovered}
+                .col.text-center.border #{country.recovered.toLocaleString()}
+            .row
+                .col.text-center.border
+                    h5 Date Updated
+                .col.text-center.border #{country.lastModified}
 
     .top-buffer
 
@@ -46,29 +50,32 @@ block appContent
                 h5 Reported Deaths
             .col.text-center.border 
                 h5 Recovered
+            .col.text-center.border
+                h5 Update
         each state in states
             .row
-                .col.text-center.border #{state.state}
+                .col.text-center.border #{state.state}, #{state.stateName}
                 
                 if state.positive == null
                     .col.text-center.border NO DATA
                 else
-                    .col.text-center.border #{state.positive}
+                    .col.text-center.border #{state.positive.toLocaleString()}
                 
                 if state.negative == null
                     .col.text-center.border NO DATA
                 else
-                    .col.text-center.border #{state.negative}
+                    .col.text-center.border #{state.negative.toLocaleString()}
 
                 if state.death == null
                     .col.text-center.border NO DATA
                 else
-                    .col.text-center.border #{state.death}
+                    .col.text-center.border #{state.death.toLocaleString()}
                 
                 if state.recovered == null
                     .col.text-center.border NO DATA
                 else
-                    .col.text-center.border #{state.recovered}
+                    .col.text-center.border #{state.recovered.toLocaleString()}
+                .col.text-center.border #{state.dateChecked}
 
                 
 
