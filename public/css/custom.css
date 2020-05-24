@@ -1,3 +1,13 @@
 .top-buffer {
     margin-top: 1.25rem;
 }
+
+.phone {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .phone {
+        display: block;
+    }
+}
