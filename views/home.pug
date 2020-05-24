@@ -46,10 +46,8 @@ block appContent
                     tr
                         th.text-left State
                         th.text-right Positive
-                        th.text-right Negative
                         th.text-right Reported Deaths
                         th.text-right Recovered
-                        th.text-right Update
                 tbody
                     each state in states
                         tr#stateRows
@@ -60,11 +58,6 @@ block appContent
                             else
                                 td.text-right #{state.positive.toLocaleString()}
                             
-                            if state.negative == null
-                                td.text-right NO DATA
-                            else
-                                td.text-right #{state.negative.toLocaleString()}
-
                             if state.death == null
                                 td.text-right NO DATA
                             else
@@ -74,7 +67,6 @@ block appContent
                                 td.text-right NO DATA
                             else
                                 td.text-right #{state.recovered.toLocaleString()}
-                            td.text-right #{state.dateChecked}
 
                 
 
