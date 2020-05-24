@@ -35,47 +35,46 @@ block appContent
     .top-buffer
 
     .container
-        .row
+         .row
             .col-12.text-center
                 h2 States Data
-        .top-buffer
-        .row
-            .col.text-center.border 
-                h5 State
-            .col.text-center.border 
-                h5 Positive
-            .col.text-center.border 
-                h5 Negative
-            .col.text-center.border 
-                h5 Reported Deaths
-            .col.text-center.border 
-                h5 Recovered
-            .col.text-center.border
-                h5 Update
-        each state in states
-            .row
-                .col.text-center.border #{state.state}, #{state.stateName}
-                
-                if state.positive == null
-                    .col.text-center.border NO DATA
-                else
-                    .col.text-center.border #{state.positive.toLocaleString()}
-                
-                if state.negative == null
-                    .col.text-center.border NO DATA
-                else
-                    .col.text-center.border #{state.negative.toLocaleString()}
 
-                if state.death == null
-                    .col.text-center.border NO DATA
-                else
-                    .col.text-center.border #{state.death.toLocaleString()}
-                
-                if state.recovered == null
-                    .col.text-center.border NO DATA
-                else
-                    .col.text-center.border #{state.recovered.toLocaleString()}
-                .col.text-center.border #{state.dateChecked}
+    .container
+        .text-center
+            table#statesTable
+                thead
+                    tr
+                        th State
+                        th Positive
+                        th Negative
+                        th Reported Deaths
+                        th Recovered
+                        th Update
+                tbody
+                    each state in states
+                        tr
+                            td #{state.state}, #{state.stateName}
+                            
+                            if state.positive == null
+                                td NO DATA
+                            else
+                                td #{state.positive.toLocaleString()}
+                            
+                            if state.negative == null
+                                td NO DATA
+                            else
+                                td #{state.negative.toLocaleString()}
+
+                            if state.death == null
+                                td NO DATA
+                            else
+                                td #{state.death.toLocaleString()}
+                            
+                            if state.recovered == null
+                                td NO DATA
+                            else
+                                td #{state.recovered.toLocaleString()}
+                            td #{state.dateChecked}
 
                 
 
