@@ -101,7 +101,7 @@ app.get("/graphs", async (request, response) => {
         var year = date.substring(0, 4);
         var month = date.substring(4, 6);
         var day = date.substring(6, 8);
-        date = new Date(year, month, day);
+        date = new Date(year, month-1, day);
         const pattern = dateTime.compile("MMM D YYYY");
         var dateString = dateTime.format(date, pattern);
 
