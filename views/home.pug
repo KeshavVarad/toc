@@ -54,17 +54,17 @@ block appContent
                             td.text-left #{state.stateName}
                             
                             if state.positive == null
-                                td.text-right NO DATA
+                                td.text-right -
                             else
                                 td.text-right #{state.positive.toLocaleString()}
                             
                             if state.death == null
-                                td.text-right NO DATA
+                                td.text-right -
                             else
                                 td.text-right #{state.death.toLocaleString()}
                             
                             if state.recovered == null
-                                td.text-right NO DATA
+                                td.text-right -
                             else
                                 td.text-right #{state.recovered.toLocaleString()}
 

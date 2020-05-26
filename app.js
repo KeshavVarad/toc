@@ -91,6 +91,7 @@ app.get("/news", async (request, response) => {
 });
 
 app.get("/graphs", async (request, response) => {
+    
     var usDailyJSON = await axios.get("https://covidtracking.com/api/us/daily");
     var usDailyJSONData = usDailyJSON.data;
     var dates = [];
