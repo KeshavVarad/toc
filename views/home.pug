@@ -16,9 +16,6 @@ block appContent
                     h5.text-warning Positive: #{country.positive.toLocaleString()}
             .row
                 .col-12.text-center
-                    h5.text-danger Negative: #{country.negative.toLocaleString()}
-            .row
-                .col-12.text-center
                     h5.text-danger Reported Deaths: #{country.death.toLocaleString()}
             .row
                 .col-12.text-center
@@ -49,19 +46,19 @@ block appContent
                             td.text-left #{state.stateName}
                             
                             if state.positive == null
-                                td.text-right -
+                                td.text-right.text-warning -
                             else
-                                td.text-right #{state.positive.toLocaleString()}
+                                td.text-right.text-warning #{state.positive.toLocaleString()}
                             
                             if state.death == null
-                                td.text-right -
+                                td.text-right.text-danger -
                             else
-                                td.text-right #{state.death.toLocaleString()}
+                                td.text-right.text-danger #{state.death.toLocaleString()}
                             
                             if state.recovered == null
-                                td.text-right -
+                                td.text-right.text-success -
                             else
-                                td.text-right #{state.recovered.toLocaleString()}
+                                td.text-right.text-success #{state.recovered.toLocaleString()}
 
                 
 
