@@ -37,7 +37,6 @@ app.get("/home", async (request, response) => {
     }
 
     var usValue = myCache.get("usData");
-    console.log("US Value: ", usValue);
     if (usValue == undefined) {
         us_query = await axios.get("http://covidtracking.com/api/us");
         myCache.set("usData", us_query.data, 3600);
@@ -91,7 +90,7 @@ app.get("/news", async (request, response) => {
 });
 
 app.get("/graphs", async (request, response) => {
-    
+
     var usDailyJSON = await axios.get("https://covidtracking.com/api/us/daily");
     var usDailyJSONData = usDailyJSON.data;
     var dates = [];

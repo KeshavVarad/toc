@@ -5,32 +5,27 @@ block appContent
 
     .top-buffer
     
-    .container
+    .container.bg-info.round
         .row
             .col-12.text-center 
-                h2 US Data
+                h2.text-white US Quick Facts
         .top-buffer
         each country in us
-            .row.text-right
-                .col.border 
-                    h5 Positive
-                .col.border #{country.positive.toLocaleString()}
-            .row.text-right
-                .col.border 
-                    h5 Negative
-                .col.border #{country.negative.toLocaleString()}
-            .row.text-right
-                .col.border 
-                    h5 Reported Deaths
-                .col.border #{country.death.toLocaleString()}
-            .row.text-right
-                .col.border 
-                    h5 Recovered
-                .col.border #{country.recovered.toLocaleString()}
-            .row.text-right
-                .col.border
-                    h5 Date Updated
-                .col.border #{country.lastModified}
+            .row
+                .col-12.text-center
+                    h5.text-warning Positive: #{country.positive.toLocaleString()}
+            .row
+                .col-12.text-center
+                    h5.text-danger Negative: #{country.negative.toLocaleString()}
+            .row
+                .col-12.text-center
+                    h5.text-danger Reported Deaths: #{country.death.toLocaleString()}
+            .row
+                .col-12.text-center
+                    h5.text-success Recovered: #{country.recovered.toLocaleString()}
+            .row
+                .col-12.text-center
+                    h5.text-white Date Updated: #{country.lastModified}
 
     .top-buffer
 
