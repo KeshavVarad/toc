@@ -30,7 +30,7 @@ app.get("/home", async (request, response) => {
         states_query = await axios.get("https://covidtracking.com/api/states");
         myCache.set("stateData", states_query.data, 3600);
         statesData = states_query.data;
-        
+
     }
     else {
         statesData = stateValue;
@@ -91,21 +91,37 @@ app.get("/news", async (request, response) => {
 
 app.get("/graphs", async (request, response) => {
 
-    var usDailyJSON = await axios.get("https://covidtracking.com/api/us/daily");
-    var usDailyJSONData = usDailyJSON.data;
+    var usDailyJSON = [];
+    var usDailyData = [];
+
+
+    var usDailyValue = myCache.get("usDaily")
+    if (usDailyValue === undefined) {
+        usDailyJSON = await axios.get("https://covidtracking.com/api/us/daily");
+
+        myCache.set("usDaily", usDailyJSON.data, 3600);
+        usDailyData = usDailyJSON.data;
+    }
+    else {
+        usDailyData = usDailyValue;
+    }
+
+
+
+
     var dates = [];
     var positives = [];
-    var numDays = usDailyJSONData.length;
+    var numDays = usDailyData.length;
     for (var i = numDays - 1; i > 0; i--) {
-        var date = usDailyJSONData[i].date.toString();
+        var date = usDailyData[i].date.toString();
         var year = date.substring(0, 4);
         var month = date.substring(4, 6);
         var day = date.substring(6, 8);
-        date = new Date(year, month-1, day);
+        date = new Date(year, month - 1, day);
         const pattern = dateTime.compile("MMM D YYYY");
         var dateString = dateTime.format(date, pattern);
 
-        var numPositive = usDailyJSONData[i].positive;
+        var numPositive = usDailyData[i].positive;
         dates.push(dateString);
         positives.push(numPositive);
     }
